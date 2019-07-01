@@ -1,0 +1,49 @@
+ /* Semua */
+ .navbar-brand{
+    font-family: Viga;
+    font-size: 32px; 
+}
+.carousel-caption{
+    margin-top: -50px;
+}
+.bd-example{
+    margin-top: -80px;
+}
+.atas{
+    z-index: 99999;
+}
+
+.style{
+    font-family: Roboto Slab;
+}
+.jumbotron{
+    height: 480px;
+} 
+/* Komputer */
+@media (min-width: 992px) {
+    .navbar-brand, .nav-link{
+        color: white;
+    }
+    .nav-link{
+        text-transform: uppercase;
+        margin-right: 30px;
+    }
+
+    .navbar .nav-link:hover{
+        color: white;
+    }
+
+    .a:hover::after{
+        content: '';
+        display: block;
+        margin: auto;
+        padding-bottom: 10px;
+        width: 50%;
+        border-bottom: 3px solid white;
+        margin-bottom: -13px;
+    } 
+    .gmbr{
+        width: 100%;
+        height:640px;
+    }
+}

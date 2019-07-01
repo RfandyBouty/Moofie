@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/download.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/sweetalert2.all.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"> 
+    <script src="js/angular.min.js"></script>   
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <title>Moofie</title>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('validateCtrl', function($scope) {
+             
+        });
+    </script> 
+
+    <script>
+        $(document).ready(function(){
+            $("#first").focus();
+            const tombol = document.querySelector('#cek');
+            $('#cek').click(function(){
+            var first = $('#first').val();
+            var last = $('#last').val();
+            var email = $('#email').val();
+            var pass = $('#pass').val(); 
+                if(first == "" && last == "" && email == "" && pass == ""){
+                    alert('Data Salah !!'); 
+                }else{
+                    tombol.addEventListener('click',function(){ 
+                // $(".cek").click(function(){ 
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Yeay...',
+                        text: 'Anda berhasil terdaftar',
+                        footer: '<a href="login.html">Masuk Sekarang</a>'
+                        });   
+                });
+                }  
+            });
+
+            //     alert("Email dan password tidak ditemukan");
+            // }
+        });
+    </script> 
+</head>
+<body> 
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <div class="login-title"> 
+                <img src="img/download.png" width="60" height="60" class="d-inline-block align-top" alt="image from www.vecteezy.com">
+                    Moofie
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+            <form ng-app="myApp"  ng-controller="validateCtrl" name="myForm" novalidate> 
+                <div class="form-group">
+                    <label class="login-text">First Name</label>
+                    <input type="text" id="first" name="first" class="form-control" required ng-model="first" minlength="1" placeholder="Enter First Name">
+                    <span style="color:red" ng-show="myForm.first.$dirty && myForm.first.$invalid">
+                    <span ng-show="myForm.first.$error.required">First Name is required.</span> 
+                
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="login-text">Last Name</label>
+                    <input type="text" class="form-control" name="last" id="last" required ng-model="last" minlength="1" placeholder="Enter Last Name">
+                    <span style="color:red" ng-show="myForm.last.$dirty && myForm.last.$invalid">
+                    <span ng-show="myForm.last.$error.required">Last Name is required.</span>  
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="login-text">Email address</label>
+                    <input type="email" class="form-control" name="email" id="email" required ng-model="email" placeholder="Enter email">
+                    <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                    <span ng-show="myForm.email.$error.required">Email is required.</span> 
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="login-text">Password</label>
+                    <input type="password" class="form-control" name="pass" id="pass" minlength="5" required ng-model="pass" placeholder="Enter Password">
+                    <span style="color:red" ng-show="myForm.pass.$dirty && myForm.pass.$invalid">
+                    <span ng-show="myForm.pass.$error.required">Password is required.</span> 
+                    <span ng-show="myForm.pass.$pristine.pass">Min. 5 karakter</span> 
+                    </span>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label login-text" for="exampleCheck1">Agree with Terms and Conditions of Use</label>
+                </div>
+                <input type="submit" id="cek" ng-disabled="myForm.first.$dirty && myForm.first.$invalid || myForm.last.$dirty && myForm.last.$invalid || myForm.email.$dirty && myForm.email.$invalid ||
+        myForm.pass.$dirty && myForm.pass.$invalid" class="cek btn btn-primary mt-2" value="Submit">
+                <a href="index.html" class="btn btn-primary mt-2">Back</a>
+            </form>
+            
+            </div>
+            
+        </div>
+    </div> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" ></script>
+</body>
+</html>
