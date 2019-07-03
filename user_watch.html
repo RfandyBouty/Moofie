@@ -13,7 +13,13 @@
    <script src="js/angular.min.js"></script>   
    <script src="js/jquery-3.4.1.min.js"></script>  
     <script src="js/slick.js"></script>
-    
+    <script>
+      $(document).ready(function(){
+        $(".logout).click(function(){
+            alert("Anda telah keluar");
+          });
+      });
+     </script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <title>Moofie</title>
 </head>
@@ -61,6 +67,7 @@
                     <a class="dropdown-item" href="premium.html">Daftar Paket</a><hr>
                     <a class="dropdown-item" href="rent.html">Sewaan Anda</a><hr>
                     <a class="dropdown-item text-muted">admin@gmail.com</a>
+                   <a class="dropdown-item text-muted" class="logout">Logout</a>
                 </div> 
             </div>
 
